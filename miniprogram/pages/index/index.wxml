@@ -1,0 +1,6 @@
+<view style="background-color: #fff;">
+  <input type="text" value="{{calendarVal}}"></input>
+  <button bindtap="show">调用日历</button>
+
+  <calendar dateType="dateTime" dateFormat="-" minYear="2000" maxYear="2019" bindremove="remove" bindchosen="chosen" wx:if="{{showCalendar}}"></calendar>
+</view>

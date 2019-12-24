@@ -1,0 +1,52 @@
+<view class="calendar-box">
+  <view class="calendar-opeBtn">
+    <button class="btn-white cancel-btn" bindtap="cancelOpe">取消</button>
+    <button class="btn-blue deter-btn" bindtap="deterOpe">确定</button>
+  </view>
+  <view class="calendar-view">
+    <block wx:if="{{dateType == 'dateTime' || dateType == 'date'}}">
+      <view id="YEAR" class="calendar-item calendar-year" bindtouchstart="touchStart" bindtouchmove="touchmove" bindtouchend="touchend">
+        <view class="year-list" style="transform:translate(0,{{calendarDis.yearDis}}px)">
+          <view wx:for="{{yearList}}">{{item}}</view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{dateType == 'dateTime' || dateType == 'date'}}">
+      <view id="MONTH" class="calendar-item calendar-month" bindtouchstart="touchStart" bindtouchmove="touchmove" bindtouchend="touchend">
+        <view class="month-list" style="transform:translate(0,{{calendarDis.monthDis}}px)">
+          <view wx:for="{{monthList}}">{{item}}</view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{dateType == 'dateTime' || dateType == 'date'}}">
+      <view id="DAY" class="calendar-item calendar-day" bindtouchstart="touchStart" bindtouchmove="touchmove" bindtouchend="touchend">
+        <view class="day-list" style="transform:translate(0,{{calendarDis.dayDis}}px)">
+          <view wx:for="{{dayList}}">{{item}}</view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{dateType == 'dateTime' || dateType == 'time'}}">
+      <view id="HOUR" class="calendar-item calendar-hour" bindtouchstart="touchStart" bindtouchmove="touchmove" bindtouchend="touchend">
+        <view class="hour-list" style="transform:translate(0,{{calendarDis.hourDis}}px)">
+          <view wx:for="{{hourList}}">{{item}}</view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{dateType == 'dateTime' || dateType == 'time'}}">
+      <view id="MINUTE" class="calendar-item calendar-minute" bindtouchstart="touchStart" bindtouchmove="touchmove" bindtouchend="touchend">
+        <view class="minite-list" style="transform:translate(0,{{calendarDis.minuteDis}}px)">
+          <view wx:for="{{minuteList}}">{{item}}</view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{second == 'second'}}">
+      <view id="SECOND" class="calendar-item calendar-second" bindtouchstart="touchStart" bindtouchmove="touchmove" bindtouchend="touchend">
+        <view class="second-list" style="transform:translate(0,{{calendarDis.secondDis}}px)">
+          <view wx:for="{{secondList}}">{{item}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+
